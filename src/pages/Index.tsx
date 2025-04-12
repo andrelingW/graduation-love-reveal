@@ -1,10 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import Letter from '@/components/Letter';
 import LetterConfig from '@/components/LetterConfig';
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { GraduationCap, Settings } from "lucide-react";
+import { Settings } from "lucide-react";
 
 const Index = () => {
   const [letterConfig, setLetterConfig] = useState({
@@ -31,20 +29,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="py-4 px-6 flex justify-between items-center bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-md">
-        <div className="flex items-center">
-          <GraduationCap className="mr-2" />
-          <h1 className="text-xl font-bold">Graduation Love Note</h1>
-        </div>
+      <div className="absolute top-4 right-4 z-10">
         <Button 
           variant="ghost" 
           size="icon"
           onClick={() => setShowConfig(!showConfig)}
-          className="text-white hover:bg-white/20"
+          className="text-blue-800 hover:bg-blue-100"
         >
           <Settings />
         </Button>
-      </header>
+      </div>
       
       <main className="flex-grow flex items-center justify-center p-4">
         {showConfig ? (
