@@ -1,10 +1,11 @@
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Card } from "@/components/ui/card";
-import { GraduationCap, Mail, Heart, Image as ImageIcon } from "lucide-react";
+import { GraduationCap, Mail, Heart } from "lucide-react";
 import Confetti from 'react-confetti';
 import { useToast } from "@/components/ui/use-toast";
 import { useWindowSize } from '@/hooks/use-window-size';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface LetterProps {
   message: string;
@@ -17,6 +18,7 @@ const Letter = ({ message, sender, imageUrl }: LetterProps) => {
   const [showConfetti, setShowConfetti] = useState(false);
   const { toast } = useToast();
   const { width, height } = useWindowSize();
+  const isMobile = useIsMobile();
   const letterRef = useRef<HTMLDivElement>(null);
 
   const handleOpenLetter = () => {
@@ -57,13 +59,13 @@ const Letter = ({ message, sender, imageUrl }: LetterProps) => {
         </div>
       ) : (
         <div ref={letterRef} className="w-full opacity-0 reveal-letter-animation">
-          <Card className="p-8 bg-blue-50 pixel-border min-h-[300px] w-full">
+          <Card className={`p-6 ${isMobile ? 'p-4' : 'p-8'} bg-blue-50 pixel-border min-h-[300px] w-full`}>
             <div className="flex flex-col h-full">
               <div className="flex justify-center mb-6">
                 <GraduationCap size={40} className="text-blue-700" />
               </div>
               
-              <h2 className="text-3xl font-bold text-center mb-4 pixel-text">Grad Quest Complete!</h2>
+              <h2 className={`${isMobile ? 'text-xl' : 'text-3xl'} font-bold text-center mb-4 pixel-text`}>Grad Quest Complete!</h2>
               
               {imageUrl && (
                 <div className="relative w-full h-40 mb-4 overflow-hidden rounded-md pixel-border">
@@ -75,8 +77,8 @@ const Letter = ({ message, sender, imageUrl }: LetterProps) => {
                 </div>
               )}
               
-              <div className="prose p-4 text-blue-900 flex-grow pixel-text">
-                <p className="whitespace-pre-line text-lg">
+              <div className={`prose p-4 ${isMobile ? 'p-2 text-sm' : 'p-4 text-lg'} text-blue-900 flex-grow pixel-text overflow-auto max-h-[50vh]`}>
+                <p className="whitespace-pre-line">
                   {message}
                 </p>
               </div>
