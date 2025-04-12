@@ -7,7 +7,7 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   base: "/graduation-love-reveal/", // 👈 this must match your repo name exactly (case-sensitive!)
   server: {
-    host: "/graduation-love-reveal/",
+    host: "::",
     port: 8080,
   },
   plugins: [
