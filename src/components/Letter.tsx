@@ -50,7 +50,7 @@ const Letter = ({ message, sender, imageUrl }: LetterProps) => {
             <Mail size={80} className="text-blue-600 pixel-text" />
             <GraduationCap size={40} className="text-blue-700 absolute top-4 right-4" />
             <p className="text-center font-medium mt-4 text-lg pixel-text">
-              Tap to Reveal Pixel Letter!
+              Tap to Reveal the Letter!
             </p>
             <div className="absolute bottom-2 right-2">
               <Heart size={20} className="text-red-400" />
@@ -65,7 +65,7 @@ const Letter = ({ message, sender, imageUrl }: LetterProps) => {
                 <GraduationCap size={40} className="text-blue-700" />
               </div>
               
-              <h2 className={`${isMobile ? 'text-xl' : 'text-3xl'} font-bold text-center mb-4 pixel-text`}>Grad Quest Complete!</h2>
+              <h2 className={`${isMobile ? 'text-xl' : 'text-3xl'} font-bold text-center mb-4 pixel-text`}>Happy Graduation!</h2>
               
               {imageUrl && (
                 <div className="relative w-full h-40 mb-4 overflow-hidden rounded-md pixel-border">
