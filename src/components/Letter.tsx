@@ -68,7 +68,7 @@ const Letter = ({ message, sender, imageUrl }: LetterProps) => {
               <h2 className={`${isMobile ? 'text-xl' : 'text-3xl'} font-bold text-center mb-4 pixel-text`}>Happy Graduation!</h2>
               
               {imageUrl && (
-                <div className="relative w-full h-40 mb-4 overflow-hidden rounded-md pixel-border">
+                <div className="relative w-full h-64 mb-4 overflow-hidden rounded-md pixel-border">
                   <img 
                     src={imageUrl} 
                     alt="Graduation memory" 
