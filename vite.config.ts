@@ -4,10 +4,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => {
-  const isProd = mode === "production";
-
   return {
-    base: isProd ? "/graduation-love-reveal/" : "/",  // ← conditional base
+    base: "/graduation-love-reveal/" ,
     server: {
       host: "::",
       port: 8080,
